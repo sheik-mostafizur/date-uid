@@ -3,7 +3,9 @@ import {ref} from "vue";
 
 const dateUid = ref(Date.now().toString(36));
 const isButtonDisabled = ref(false);
-const isMessage = ref(true);
+const isMessage = ref(false);
+
+const dateStringUid = ref("lt9hemhc");
 
 const handleGenerateDateUid = () => {
   dateUid.value = Date.now().toString(36);
@@ -12,6 +14,7 @@ const handleGenerateDateUid = () => {
     isButtonDisabled.value = false;
   }, 1);
 };
+
 const copyText = async () => {
   try {
     await navigator.clipboard.writeText(dateUid.value);
@@ -56,8 +59,12 @@ const copyText = async () => {
         id="first_name"
         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
         placeholder="lt9hemhc"
+        v-model="dateStringUid"
         required />
-      <h3 class="font-bold text-3xl text-center">abcd34</h3>
+      <h3 class="font-medium text-center">
+        {{ new Date(parseInt(dateStringUid, 36)).toLocaleTimeString() }}
+        {{ new Date(parseInt(dateStringUid, 36)).toLocaleDateString() }}
+      </h3>
     </div>
   </section>
 </template>
