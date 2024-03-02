@@ -48,7 +48,7 @@ const copyText = async () => {
         @click="handleGenerateDateUid"
         :disabled="isButtonDisabled"
         type="button"
-        class="w-full text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2 dark:bg-gray-600 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800 disabled:bg-opacity-50 disabled:cursor-wait">
+        class="w-full text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2 dark:bg-gray-600 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800 disabled:bg-opacity-50 disabled:cursor-not-allowed">
         Generate
       </button>
     </div>
